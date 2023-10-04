@@ -31,13 +31,13 @@ jobs:
       - name: Run eslint linter
         run: npx eslint --max-warnings 0 .
       - name: Run TypeScript compiler
-        run: npm run typecheck
+        run: npx tsc
       - name: Run Prettier code style checks
         run: npx prettier -c .
         # Skip prettier checks on Windows due to line endings.
         # See https://prettier.io/docs/en/options.html#end-of-line
         if: ${{ runner.os != 'Windows' }}
       - name: Run unit tests
-        run: npm run test-coverage
+        run: npx jest --coverage
       - name: Upload to Codecov.io
         uses: codecov/codecov-action@v3
