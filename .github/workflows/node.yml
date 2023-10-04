@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: matrix
-        uses: nasa-gcn/node-auto-matrix@main
+        uses: nasa-gcn/node-auto-matrix@v1
     outputs:
       nodeVersion: ${{ steps.matrix.outputs.nodeVersion }}
       runsOn: ${{ steps.matrix.outputs.runsOn }}
