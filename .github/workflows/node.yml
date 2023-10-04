@@ -1,6 +1,7 @@
 name: Build and test Node.js
 
-on: []
+on:
+  workflow_call:
 
 jobs:
   matrix:
