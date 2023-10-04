@@ -1,0 +1,42 @@
+name: Build and test Node.js
+
+on: []
+
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: matrix
+        uses: nasa-gcn/node-auto-matrix@main
+    outputs:
+      nodeVersion: ${{ steps.matrix.outputs.nodeVersion }}
+      runsOn: ${{ steps.matrix.outputs.runsOn }}
+  build:
+    needs: matrix
+    strategy:
+      matrix:
+        nodeVersion: ${{ fromJson(needs.matrix.outputs.nodeVersion) }}
+        runsOn: ${{ fromJson(needs.matrix.outputs.runsOn) }}
+    runs-on: ${{ matrix.runsOn }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.nodeVersion }}
+      - name: NPM Install
+        run: npm ci
+      - name: Run eslint linter
+        run: npx eslint --max-warnings 0 .
+      - name: Run TypeScript compiler
+        run: npm run typecheck
+      - name: Run Prettier code style checks
+        run: npx prettier -c .
+        # Skip prettier checks on Windows due to line endings.
+        # See https://prettier.io/docs/en/options.html#end-of-line
+        if: ${{ runner.os != 'Windows' }}
+      - name: Run unit tests
+        run: npm run test-coverage
+      - name: Upload to Codecov.io
+        uses: codecov/codecov-action@v3
