@@ -38,6 +38,6 @@ jobs:
         # See https://prettier.io/docs/en/options.html#end-of-line
         if: ${{ runner.os != 'Windows' }}
       - name: Run unit tests
-        run: npx jest --coverage
+        run: npm test
       - name: Upload to Codecov.io
         uses: codecov/codecov-action@v3
