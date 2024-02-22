@@ -13,13 +13,13 @@ By default, the PR author should merge once the reviewers have had a chance to r
 If you have a different preference or cannot merge after review for some other constraint, leave a note about it here.
 
 ### Changes
-List your changes
+List your changes in detail
 
 ### Acceptance Criteria
 What needs to happen functionally for this work to pass review?  
 
 ### Related Issue(s)
-Remove this line and link your issue here: Issue #1234 - Add Foo to Bar.  
+Resolves [Paste Issue URL here]
 
 ### Testing
 Add how you tested this PR AND add steps for testing this PR.  
