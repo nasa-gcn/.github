@@ -1,5 +1,6 @@
 ---
 name: Enhancement or Feature Request
+about: Suggest an enhancement or a new feature
 labels: enhancement
 ---
 
