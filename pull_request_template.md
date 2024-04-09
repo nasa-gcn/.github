@@ -1,4 +1,4 @@
-<!-- IMPORTANT!!! Please do not create a Pull Request without an existing Issue. If one does not exist, create an Issue first! -->
+<!-- IMPORTANT!!! If possible, please create an Issue before making a Pull Request. -->
 
 ### Description
 Please include a one to two sentence description that summarizes the issue and your solution.
