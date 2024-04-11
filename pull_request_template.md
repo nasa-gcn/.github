@@ -1,4 +1,4 @@
-<!-- IMPORTANT!!! If possible, please create an Issue before making a Pull Request. -->
+<!-- IMPORTANT!!! Aside from typographical corrections and minor changes, please consider creating an Issue before making a Pull Request. -->
 
 ### Description
 Please include a one to two sentence description that summarizes the issue and your solution.
