@@ -2,6 +2,12 @@ name: Build and test Node.js
 
 on:
   workflow_call:
+    inputs:
+      test-options:
+        description: Arguments to pass to test runner
+        default: --coverage
+        required: false
+        type: string
 
 jobs:
   matrix:
@@ -38,6 +44,6 @@ jobs:
         # See https://prettier.io/docs/en/options.html#end-of-line
         if: ${{ runner.os != 'Windows' }}
       - name: Run unit tests
-        run: npm test --if-present -- --coverage
+        run: npm test --if-present -- ${{ inputs.test-options }}
       - name: Upload to Codecov.io
         uses: codecov/codecov-action@v3
