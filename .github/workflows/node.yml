@@ -38,6 +38,8 @@ jobs:
         run: npx eslint --max-warnings 0 .
       - name: Run TypeScript compiler
         run: npx tsc
+        # Skip if there is no tsconfig.json file
+        if: hashFiles('tsconfig.json') != ''
       - name: Run Prettier code style checks
         run: npx prettier -c .
         # Skip prettier checks on Windows due to line endings.
