@@ -8,6 +8,10 @@ on:
         default: --coverage
         required: false
         type: string
+    secrets:
+      CODECOV_TOKEN:
+        description: Codecov upload token
+        required: false
 
 jobs:
   matrix:
