@@ -17,9 +17,9 @@ jobs:
   matrix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
       - id: matrix
-        uses: nasa-gcn/node-auto-matrix@v1
+        uses: nasa-gcn/node-auto-matrix@2c9e5d08e84baf323f63bca4b29471a687f3aab5  # v1.0.0
     outputs:
       nodeVersion: ${{ steps.matrix.outputs.nodeVersion }}
       runsOn: ${{ steps.matrix.outputs.runsOn }}
@@ -31,9 +31,9 @@ jobs:
         runsOn: ${{ fromJson(needs.matrix.outputs.runsOn) }}
     runs-on: ${{ matrix.runsOn }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e  # v4.3.0
         with:
           node-version: ${{ matrix.nodeVersion }}
       - name: NPM Install
@@ -52,6 +52,6 @@ jobs:
       - name: Run unit tests
         run: npm test --if-present -- ${{ inputs.test-options }}
       - name: Upload to Codecov.io
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@0565863a31f2c772f9f0395002a31e3f06189574  # v5.0.0-beta
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
