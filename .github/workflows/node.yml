@@ -8,6 +8,11 @@ on:
         default: --coverage
         required: false
         type: string
+      docker:
+        description: Set to true if Docker is required
+        default: false
+        type: boolean
+        required: false
     secrets:
       CODECOV_TOKEN:
         description: Codecov upload token
@@ -20,6 +25,8 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
       - id: matrix
         uses: nasa-gcn/node-auto-matrix@c272733d70b185f4d07f92cf508bc23fa7c3785f  # v1.1.0
+        with:
+          runner-macos: macos-13  # FIXME: https://github.com/nasa-gcn/setup-docker currently requires an Intel runner
     outputs:
       nodeVersion: ${{ steps.matrix.outputs.nodeVersion }}
       runsOn: ${{ steps.matrix.outputs.runsOn }}
@@ -36,6 +43,9 @@ jobs:
         uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e  # v4.3.0
         with:
           node-version: ${{ matrix.nodeVersion }}
+      - name: Set up Docker
+        if: inputs.docker
+        uses: nasa-gcn/setup-docker@v1.0.0
       - name: NPM Install
         run: npm ci
       - name: Run eslint linter
