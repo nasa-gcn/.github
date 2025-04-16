@@ -19,9 +19,11 @@ Unified Schema: https://gcn.nasa.gov/docs/notices/schema
 # Acceptance criteria
 
 - [ ] create topics/acls
-- [ ] JSON schema
-- [ ] mission page
+- [ ] finalize JSON schema
+- [ ] add/update producer mission page
+- [ ] update mission page table
 - [ ] add to quickstart
-- [ ] announcement
+- [ ] remove feature flag
+- [ ] post and distribute announcement
 
 # Mission contact people
