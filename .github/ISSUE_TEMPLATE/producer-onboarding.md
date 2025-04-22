@@ -18,7 +18,7 @@ Unified Schema: https://gcn.nasa.gov/docs/notices/schema
 
 # Acceptance criteria
 
-- [ ] create [topics/acls](https://gcn.nasa.gov/docs/notices/producers) (GCN Team)
+- [ ] create [topics/ACLs](https://gcn.nasa.gov/docs/notices/producers) (GCN Team)
 - [ ] finalize [JSON schema](https://gcn.nasa.gov/docs/notices/schema) (Producers)
 - [ ] add/update [producer mission page](https://gcn.nasa.gov/missions) (Producers)
 - [ ] update [mission page table](https://gcn.nasa.gov/missions) (GCN Team)
