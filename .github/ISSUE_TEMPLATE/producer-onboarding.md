@@ -18,10 +18,12 @@ Unified Schema: https://gcn.nasa.gov/docs/notices/schema
 
 # Acceptance criteria
 
-- [ ] create topics/acls
-- [ ] JSON schema
-- [ ] mission page
-- [ ] add to quickstart
-- [ ] announcement
+- [ ] create [topics/ACLs](https://gcn.nasa.gov/docs/notices/producers) (GCN Team)
+- [ ] finalize [JSON schema](https://gcn.nasa.gov/docs/notices/schema) (Producers)
+- [ ] add/update [producer mission page](https://gcn.nasa.gov/missions) (Producers)
+- [ ] update [mission page table](https://gcn.nasa.gov/missions) (GCN Team)
+- [ ] add to [quickstart](https://gcn.nasa.gov/quickstart) (GCN Team)
+- [ ] remove [feature flag](https://gcn.nasa.gov/docs/contributing/feature-flags) (GCN Team)
+- [ ] post and distribute [announcement](https://gcn.nasa.gov/news) (GCN Team)
 
 # Mission contact people
