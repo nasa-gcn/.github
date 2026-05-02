@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
       - id: matrix
-        uses: nasa-gcn/node-auto-matrix@c272733d70b185f4d07f92cf508bc23fa7c3785f  # v1.1.0
+        uses: nasa-gcn/node-auto-matrix@7a29907973b834a998c4bb818050d2b992358ae0  # v1.2.0
         with:
           runner-macos: macos-15-intel  # FIXME: https://github.com/nasa-gcn/setup-docker currently requires an Intel runner
     outputs:
