@@ -22,7 +22,7 @@ jobs:
   matrix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
       - id: matrix
         uses: nasa-gcn/node-auto-matrix@7a29907973b834a998c4bb818050d2b992358ae0  # v1.2.0
         with:
@@ -38,9 +38,9 @@ jobs:
         runsOn: ${{ fromJson(needs.matrix.outputs.runsOn) }}
     runs-on: ${{ matrix.runsOn }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
       - name: Install Node.js
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e  # v6.4.0
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020  # v7.0.0
         with:
           node-version: ${{ matrix.nodeVersion }}
       - name: Set up Docker
