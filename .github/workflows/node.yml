@@ -26,7 +26,7 @@ jobs:
       - id: matrix
         uses: nasa-gcn/node-auto-matrix@7a29907973b834a998c4bb818050d2b992358ae0  # v1.2.0
         with:
-          runner-macos: macos-15-intel  # FIXME: https://github.com/nasa-gcn/setup-docker currently requires an Intel runner
+          runner-macos: macos-26-intel  # FIXME: https://github.com/nasa-gcn/setup-docker currently requires an Intel runner
     outputs:
       nodeVersion: ${{ steps.matrix.outputs.nodeVersion }}
       runsOn: ${{ steps.matrix.outputs.runsOn }}
