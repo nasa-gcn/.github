@@ -45,7 +45,7 @@ jobs:
           node-version: ${{ matrix.nodeVersion }}
       - name: Set up Docker
         if: inputs.docker
-        uses: nasa-gcn/setup-docker@v1.0.0
+        uses: nasa-gcn/setup-docker@v1.1.0
       - name: NPM Install
         run: npm ci
       - name: Run eslint linter
